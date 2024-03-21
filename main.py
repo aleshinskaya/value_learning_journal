@@ -74,7 +74,7 @@ def test_one_step(journal_filename: str, person_name: str = 'user', prompt_list:
     with open(journal_filename, 'r') as file:
       this_entry = file.read()
   except:
-      raise FileExistsError()
+      raise FileNotFoundError()
 
   n_prompt = 0
   #pass the entry to the selected prompt
@@ -83,7 +83,7 @@ def test_one_step(journal_filename: str, person_name: str = 'user', prompt_list:
     # call prompts with entry and this prompt to generate prompt text
     prompt_text = prompts.PROMPT_1(this_entry,this_p)
     # use this prompt to query GPT
-    prompt_response = promptGPT_json(prompt_text,0.7)  
+    prompt_response = promptGPT_json(prompt_text,0)  
     # print(prompt_response)
     # save response
     response_list=json.loads(prompt_response)  

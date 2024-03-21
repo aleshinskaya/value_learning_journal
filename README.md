@@ -1,9 +1,9 @@
 # value_learning_journal
 
 
-Use wrapper.py to compare prompts! 
+Use wrapper.py to compare prompts or follow the example in test_001.ipynb. 
 
-Save entries in data/
+Save journal entries in data/ 
 
 Outputs will be stored in the same directory.
 

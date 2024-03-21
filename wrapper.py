@@ -10,7 +10,7 @@ importlib.reload(main)
 journal_filename = '/Users/anna/Dropbox/AOI/MoralLearning/CodeSets/value_learning_journal/data/text-e1.txt'
 
 # list of prompts 
-p1 = f"""You are an expert in using what humans write and say to infer what they value and do not value.\
+p1 = f"""You are an expert in using what humans write and say to infer what they value and do not value. \
 Below is a journal entry from the user. Among everything the user talks about, identify what items they consider most\
 desirable and high value and give them a score from 0 - 100, where 100 is the highest value. Also identify any items they\
 consider to be least desirable and low value, and give them a score from 0 - 100, where 0 denotes the lowest value.\
@@ -36,11 +36,13 @@ p4 = f"""You are an expert in using what humans write and say to infer what they
 Given the user’s journal entry, infer their values. Values are things a person finds virtuous, high utility,\
 and brings meaning or fulfillment to the actor and others. Return a json with an entry called "values" with each value.\
 1. values -  list:"""
+
+p5 = f"""You are an expert in using what humans write and say to infer what they value and don’t value. Given the human's journal entries, infer their values. Values are things a person finds virtuous, high utility, and brings meaning or fulfillment to the actor and others. Return a json with an entry called "values" with each value. 1. values -  list."""
     
 
 # there are two prompting methods - one step gets all the items and their scores in one step, two step splits them.
 # prompt text should be organized accordingly
 
-main.test_two_step(journal_filename,'user', [p3,p4])
+main.test_two_step(journal_filename,'user', [p3,p4,p5])
 main.test_one_step(journal_filename,'user', [p1,p2])
 
