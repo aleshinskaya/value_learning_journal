@@ -1,40 +1,75 @@
 
 import os
-import json
-from dotenv import dotenv_values
-from dotenv import load_dotenv
-import google-api-python-client
+import json, jsonlines
+import pandas as pd
+# from dotenv import dotenv_values
+# from dotenv import load_doten
 
 # set some global variables
-load_dotenv() 
-global config
-config = dotenv_values(".env")
-# returns google API key
-config['GOOGLE_KEY']
-
+# load_dotenv() 
+# global config
+# config = dotenv_values(".env")
+# # returns google API key
+# config['GOOGLE_KEY']
+# set current path
 CUR_DIR = os.path.dirname(os.path.abspath(__name__))
 
 
 # full path to data json with values 
-journal_filename = '/Users/anna/Dropbox/AOI/MoralLearning/CodeSets/value_learning_journal/data/thoughts_output_sample.json'
+# json_filename_list = ['s00_text-e1_one_step_prompt_0.json','s00_text-e2_one_step_prompt_0.json']
+# data_path = '/Users/anna/Dropbox/AOI/MoralLearning/CodeSets/value_learning_journal/data/'
+# subjID='s00'
 
-# read in the json
-try:
-    with open(journal_filename, 'r') as file:
-        this_data = json.load(file)
-except:
-    raise FileExistsError()
+def main(json_filename_list,data_path,subjID):
 
 
-assert(this_data['values'])
+    # read in each file in list and save to a list of items for writeout
 
-# open a json file for output
+    agg_item_list = []
 
-# for each item, define question
-these_items = this_data['values']
-       
-for item in these_items:
-    print(item['value'])
+    for json_filename in json_filename_list:
+        # read in the json
+        try:
+            with open(data_path+json_filename, 'r') as file:
+                this_data = json.load(file)
+        except:
+            raise FileExistsError()
+
+    
+        # do some validation of the structure
+        values_data=this_data[1]
+        assert(values_data['values'])
+
+        # expected to be a list of items 
+        vlist=values_data['values']
+
+        # add to big list of items 
+        for v in vlist:
+            agg_item_list.append((v["item"]))
+
+
+
+    # go through these and write the items out to a simple csv
+    # Specify the  output file path
+    output_filename = data_path+subjID+'.csv'
+
+    df = pd.DataFrame(agg_item_list,columns=['item'])
+    df.to_csv(output_filename, index=False)
+
+
+
+
+
+
+
+
+    # # open a json file for output
+
+    # # for each item, define question
+    # these_items = this_data['values']
+        
+    # for item in these_items:
+    #     print(item['value'])
     # pipe this into the question. 
 
 # read in contrast items/foil items
