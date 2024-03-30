@@ -1,0 +1,10 @@
+[{"prompt": "You are an expert in using what humans write and say to infer what they value and don't value. Given the user's journal entry, infer their values.  Return a json with each value and a score for how important it is to the user on a scale of 0 to 100, where 100 denotes the items with the highest value possible.1. values -  list:1. item - <string>: the item2. score - <int>: that item's score"},
+{"values": [{"item": "Meaningful experiences", "score": 90},
+{"item": "Gratitude", "score": 85},
+{"item": "Supportive relationships", "score": 80},
+{"item": "Personal growth", "score": 75},
+{"item": "Connection with others", "score": 70},
+{"item": "Validation", "score": 65},
+{"item": "Engagement", "score": 60},
+{"item": "Happiness", "score": 55},
+{"item": "Energy", "score": 50}]}]

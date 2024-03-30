@@ -1,0 +1,11 @@
+[{"prompt": "You are an expert in using what humans write and say to infer what they value and don't value.\nWhat are the user's values according to this journal entry? Return a json called \"values\" with each value. 1. values -  list:"},
+{"values": [{"value": "Time Management", "score": 70},
+{"value": "Personal Growth", "score": 80},
+{"value": "Home Comfort", "score": 60},
+{"value": "Emotional Awareness", "score": 70},
+{"value": "Self-care", "score": 80},
+{"value": "Validation", "score": 90},
+{"value": "Productivity", "score": 70},
+{"value": "Social Connection", "score": 80},
+{"value": "Physical Health", "score": 80},
+{"value": "Meaningful Relationships", "score": 90}]}]

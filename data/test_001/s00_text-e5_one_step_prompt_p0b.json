@@ -1,0 +1,11 @@
+[{"prompt": "Given the user's journal entry, infer their values.  Return a json with each value and a score for how important it is to the user on a scale of 0 to 100, where 100 denotes the items with the highest value possible.1. values -  list:1. item - <string>: the item2. score - <int>: that item's score"},
+{"values": [{"item": "Productivity", "score": 80},
+{"item": "Leisure", "score": 60},
+{"item": "Self-care", "score": 70},
+{"item": "Achievement", "score": 75},
+{"item": "Reading", "score": 65},
+{"item": "Physical fitness", "score": 70},
+{"item": "Rest", "score": 60},
+{"item": "Introspection", "score": 50},
+{"item": "Supporting others", "score": 70},
+{"item": "Cleanliness", "score": 55}]}]

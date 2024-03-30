@@ -1,0 +1,10 @@
+[{"prompt": "You are an expert in using what humans write and say to infer what they value and don't value. Given the user's journal entry, infer their values. Values are things a person finds virtuous and high utility, and which bring them meaning or fulfillment. Return a json with an entry called \"values\" with each value. 1. values -  list:"},
+{"values": [{"value": "Self-care and grooming", "score": 90},
+{"value": "Socializing and potential romance", "score": 85},
+{"value": "Personal growth", "score": 80},
+{"value": "Productivity", "score": 70},
+{"value": "Meaningful connections with friends", "score": 85},
+{"value": "Managing workload and focus", "score": 75},
+{"value": "Emotional alignment and self-awareness", "score": 80},
+{"value": "Rest and relaxation", "score": 65},
+{"value": "Physical health and exercise", "score": 85}]}]
