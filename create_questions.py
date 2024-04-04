@@ -20,6 +20,20 @@ CUR_DIR = os.path.dirname(os.path.abspath(__name__))
 # data_path = '/Users/anna/Dropbox/AOI/MoralLearning/CodeSets/value_learning_journal/data/'
 # subjID='s00'
 
+
+
+
+json_filename_list = ['s00_e6n.json','s00_e76n.json','s00_e8n.json','s00_e9n.json']
+json_filename_list = ['s00_e6p.json','s00_e76p.json','s00_e8p.json','s00_e9p.json']
+
+
+data_path = CUR_DIR+'/data/test_002/'
+
+
+subjID='s00'
+
+
+
 def main(json_filename_list,data_path,subjID):
 
 
@@ -35,13 +49,12 @@ def main(json_filename_list,data_path,subjID):
         except:
             raise FileExistsError()
 
-    
-        # do some validation of the structure
-        values_data=this_data[1]
-        assert(values_data['values'])
+        # figure out keys so we just get whatever exists here 
+        key_list = list(this_data.keys())
+        values_data = [this_data[x] for x in key_list]
 
-        # expected to be a list of items 
-        vlist=values_data['values']
+        # do some validation of the structure
+
 
         # add to big list of items 
         for v in vlist:
